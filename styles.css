@@ -1,8 +1,3 @@
-/* =========================================================
-   LiterallyLukas.dev — Hub
-   Design tokens + base styles
-   ========================================================= */
-
 :root {
   /* Paper / ink — warm neutrals */
   --paper-0: oklch(0.985 0.003 85);
@@ -109,7 +104,6 @@ svg { width: 1em; height: 1em; flex-shrink: 0; }
 a { color: inherit; text-decoration: none; }
 input, textarea { font: inherit; color: inherit; }
 
-/* Ambient background — faint grid + warm blob */
 .ambient {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background:
@@ -127,9 +121,6 @@ input, textarea { font: inherit; color: inherit; }
   mask-image: radial-gradient(circle at 50% 40%, black, transparent 75%);
 }
 
-/* =========================================================
-   Glass primitive
-   ========================================================= */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(24px) saturate(1.4);
@@ -151,9 +142,6 @@ input, textarea { font: inherit; color: inherit; }
   background: linear-gradient(180deg, color-mix(in oklch, white 6%, transparent) 0%, transparent 35%);
 }
 
-/* =========================================================
-   App shell — sidebar + panel
-   ========================================================= */
 .app {
   position: relative; z-index: 1;
   display: grid;
@@ -168,7 +156,6 @@ input, textarea { font: inherit; color: inherit; }
   grid-template-rows: auto 1fr;
 }
 
-/* Sidebar */
 .sidebar {
   padding: var(--pad-4);
   display: flex; flex-direction: column; gap: var(--pad-4);
@@ -225,7 +212,6 @@ input, textarea { font: inherit; color: inherit; }
 
 .sidebar-spacer { flex: 1; }
 
-/* Status card inside sidebar */
 .status-card {
   padding: 12px;
   border-radius: var(--r-2);
@@ -241,7 +227,6 @@ input, textarea { font: inherit; color: inherit; }
 }
 .status-card .row b { color: var(--fg); font-weight: 600; }
 
-/* Main panel */
 .panel {
   padding: var(--pad-4) var(--pad-5);
   overflow-y: auto;
@@ -251,9 +236,6 @@ input, textarea { font: inherit; color: inherit; }
 .panel::-webkit-scrollbar { width: 8px; }
 .panel::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
 
-/* =========================================================
-   Top bar
-   ========================================================= */
 .topbar {
   display: flex; align-items: center; gap: 12px;
   padding-bottom: 4px;
@@ -303,9 +285,6 @@ input, textarea { font: inherit; color: inherit; }
 .iconbtn:hover { border-color: var(--border-strong); color: var(--fg); }
 .iconbtn svg { width: 15px; height: 15px; }
 
-/* =========================================================
-   Hero card (Remote Desktop)
-   ========================================================= */
 .hero {
   position: relative;
   padding: var(--pad-4);
@@ -373,7 +352,6 @@ input, textarea { font: inherit; color: inherit; }
 .btn-primary:hover { border-color: var(--ink-0); }
 .btn svg { width: 14px; height: 14px; }
 
-/* Hero visual — stylized window preview */
 .hero-viz {
   position: relative;
   border-radius: var(--r-3);
@@ -464,7 +442,6 @@ input, textarea { font: inherit; color: inherit; }
 }
 .hero-viz .mini-window .content .grid div:nth-child(2n) { opacity: 0.35; }
 
-/* Metrics strip */
 .hero-metrics {
   grid-column: 1 / -1;
   display: grid;
@@ -501,9 +478,6 @@ input, textarea { font: inherit; color: inherit; }
   letter-spacing: 0;
 }
 
-/* =========================================================
-   Projects grid
-   ========================================================= */
 .section-head {
   display: flex; align-items: baseline; gap: 10px;
   padding-bottom: 4px;
@@ -627,9 +601,6 @@ input, textarea { font: inherit; color: inherit; }
 .card.coming:hover { transform: none; box-shadow: none; }
 .card.coming .name { color: var(--fg-dim); }
 
-/* =========================================================
-   Right-side stack: guestbook, visitors, contact
-   ========================================================= */
 .two-col {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -637,7 +608,6 @@ input, textarea { font: inherit; color: inherit; }
 }
 @media (max-width: 1100px) { .two-col { grid-template-columns: 1fr; } }
 
-/* Guestbook */
 .guestbook { padding: var(--pad-4); }
 .guest-list {
   display: flex; flex-direction: column; gap: 10px;
@@ -736,7 +706,6 @@ input, textarea { font: inherit; color: inherit; }
   text-align: center;
 }
 
-/* Visitors */
 .visitors { padding: var(--pad-4); display: flex; flex-direction: column; gap: 14px; }
 .visitor-count {
   display: flex; align-items: baseline; gap: 8px;
@@ -790,7 +759,6 @@ input, textarea { font: inherit; color: inherit; }
 .contact-row .val { color: var(--fg); font-weight: 500; }
 .contact-row .arr { margin-left: auto; color: var(--fg-faint); }
 
-/* Stranger note */
 .stranger-note {
   padding: 14px 18px;
   border-radius: var(--r-2);
@@ -804,7 +772,6 @@ input, textarea { font: inherit; color: inherit; }
   letter-spacing: 0.02em;
 }
 
-/* Offline states */
 .eyebrow-off .livedot,
 .livedot.off {
   background: var(--fg-faint) !important;
@@ -821,7 +788,6 @@ input, textarea { font: inherit; color: inherit; }
 }
 .nav-item .dot.off { background: var(--fg-faint); box-shadow: none; }
 
-/* Disclaimer */
 .disclaimer-overlay {
   position: fixed; inset: 0; z-index: 200;
   background: color-mix(in oklch, var(--ink-0) 45%, transparent);
@@ -866,9 +832,6 @@ input, textarea { font: inherit; color: inherit; }
   display: flex; justify-content: flex-end; gap: 8px;
 }
 
-/* =========================================================
-   Command palette (⌘K)
-   ========================================================= */
 .cmdk-overlay {
   position: fixed; inset: 0; z-index: 100;
   background: color-mix(in oklch, var(--ink-0) 35%, transparent);
@@ -932,9 +895,6 @@ input, textarea { font: inherit; color: inherit; }
   font-family: var(--font-mono); font-size: 10px; color: var(--fg-faint);
 }
 
-/* =========================================================
-   Tweaks panel
-   ========================================================= */
 .tweaks {
   position: fixed;
   right: 16px;
@@ -987,10 +947,51 @@ input, textarea { font: inherit; color: inherit; }
 .seg button.on { background: var(--bg-elev); color: var(--fg); box-shadow: var(--shadow-1); }
 .tweak input[type="range"] { width: 100%; accent-color: var(--accent); }
 
-/* =========================================================
-   Misc / transitions
-   ========================================================= */
 .fade-in { animation: fadein 0.4s ease both; }
 @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 .sr { position: absolute; left: -9999px; }
+
+
+.country-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 6px;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--fg-dim);
+  background: color-mix(in oklch, var(--fg) 5%, transparent);
+  border-radius: 4px;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.guest-admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  margin-left: 4px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-1);
+  color: var(--fg-dim);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.guest-admin-btn:hover {
+  color: var(--err);
+  border-color: var(--err);
+  background: color-mix(in oklch, var(--err) 8%, transparent);
+}
+
+.guest-admin-btn svg {
+  width: 12px;
+  height: 12px;
+}
