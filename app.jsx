@@ -4,7 +4,6 @@ const { useState, useEffect, useRef, useMemo, useCallback } = React;
 const SITE = {
   name:     "literallylukas.dev",
   owner:    "Lukas",
-  location: ,
   email:    "contact@literallylukas.dev",
   github:   "LiterallyLukas123",
   githubUrl: "https://github.com/LiterallyLukas123",
@@ -122,8 +121,6 @@ function TopBar({ onOpenCmdK, theme, setTheme }) {
 function Sidebar({ setActive, setTheme, theme, onOpenCmdK, onRandomGuest, admin }) {
   const now = useClock();
   const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
-  const tz = new Intl.DateTimeFormat([], { timeZoneName: "short" })
-    .formatToParts(now).find(p => p.type === "timeZoneName")?.value || "";
 
   const scrollTo = (id) => {
     setActive(id);
@@ -171,8 +168,7 @@ function Sidebar({ setActive, setTheme, theme, onOpenCmdK, onRandomGuest, admin 
       <div className="sidebar-spacer" />
 
       <div className="status-card">
-        <div className="row"><span>time</span><b>{time} {tz}</b></div>
-        <div className="row"><span>where</span><b>{SITE.location}</b></div>
+        <div className="row"><span>time</span><b>{time}</b></div>
       </div>
     </aside>
   );
